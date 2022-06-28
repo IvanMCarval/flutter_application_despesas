@@ -28,7 +28,7 @@ class TransactionList extends StatelessWidget {
                 )),
                 padding: EdgeInsets.all(10),
                 child: Text(
-                  'R\$ ${tr.values.toStringAsFixed(2)}',
+                  'R\$ ${tr.value.toStringAsFixed(2)}',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
