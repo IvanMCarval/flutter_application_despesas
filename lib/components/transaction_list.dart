@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors_in_immutables, prefer_const_constructors
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors_in_immutables, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_despesas/models/transaction.dart';
@@ -13,7 +13,24 @@ class TransactionList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 300,
-      child: ListView.builder(
+      child: transactions.isEmpty ? Column(
+        children: [
+          Text(
+            'Nenhuma Transação Cadastrada',
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Container(
+            height: 200,
+            child: Image.asset(
+              'assets/images/waiting.png',
+              fit: BoxFit.cover,
+            ),
+          )
+        ],
+      ) : ListView.builder(
         itemCount: transactions.length,
         itemBuilder: (ctx, index) {
           final tr = transactions[index];
