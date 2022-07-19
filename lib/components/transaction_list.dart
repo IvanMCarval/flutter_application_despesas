@@ -12,7 +12,7 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height: 400,
       child: transactions.isEmpty
           ? Column(
               children: [
@@ -50,7 +50,7 @@ class TransactionList extends StatelessWidget {
                         padding: const EdgeInsets.all(6),
                         child: FittedBox(
                           child: Text(
-                            'R\$${tr.value}',
+                            'R\$${tr.value.toStringAsFixed(2)}',
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
